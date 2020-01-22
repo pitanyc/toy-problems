@@ -11,20 +11,20 @@
  Output: index1=0, index2=1
  */
 
-/// SOLUTION ///
+// SOLUTION
 const twoSum = (arr, target) => {
   // use HashMap ==> O(n)
 
   // edge cases
   const len = arr.length;
   if (len === 0) {
-    throw "Empty array was passed!";
+    throw 'Empty array was passed!';
   }
 
   // what we return
   const returnValue = {
     index1: -1,
-    index2: -2
+    index2: -2,
   };
 
   // locals
@@ -45,22 +45,22 @@ const twoSum = (arr, target) => {
   });
 
   // if we are here ==> unable to find 2 indices to map to target
-  throw "Unable to find 2 indices that map to target!";
+  throw 'Unable to find 2 indices that map to target!';
 };
 
-/// TEST CASES ///
+// / TEST CASES ///
 
 // 1
 let arr = [2, 7, 11, 15];
 let target = 9;
-console.log("arr: ", arr, ", target: ", target);
+console.log('arr: ', arr, ', target: ', target);
 let output = twoSum(arr, target);
-console.log("output: ", output);
+console.log('output: ', output);
 
 // 2
-console.log("====");
+console.log('====');
 arr = [2, 7, 11, 15];
 target = 1;
-console.log("arr: ", arr, ", target: ", target);
+console.log('arr: ', arr, ', target: ', target);
 output = twoSum(arr, target);
-console.log("output: ", output);
+console.log('output: ', output);

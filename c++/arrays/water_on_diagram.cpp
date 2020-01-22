@@ -1,7 +1,8 @@
 /**
+ * LEETCODE 42: Trapping Rain Water
+ * 
+ * https://leetcode.com/problems/trapping-rain-water/
  * https://www.programcreek.com/2014/06/leetcode-trapping-rain-water-java/
- *
- *  Trapping Rain Water
  *
  * Given n non-negative integers representing an elevation map where the
  * width of each bar is 1, compute how much water it is able to trap

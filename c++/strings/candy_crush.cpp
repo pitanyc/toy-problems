@@ -1,4 +1,8 @@
 /**
+ * LEETCODE 723: Candy Crush
+ * 
+ * https://leetcode.com/problems/candy-crush/
+ * 
  * Given a string, remove all characters of 3 or more occurrences on it, 
  * ala candy crush.
  * 
