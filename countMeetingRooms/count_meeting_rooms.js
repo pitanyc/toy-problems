@@ -16,7 +16,7 @@
  (1,5), (2,5), (3,9), (4,7) overlap
  */
 
-/// SOLUTION
+// SOLUTION
 const countMeetingRooms = A => {
   // consume input, store in a datastructure ==> O(n^2), can be O(nlogn)
 
