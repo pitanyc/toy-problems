@@ -16,7 +16,7 @@
  (1,5), (2,5), (3,9), (4,7) overlap
  */
 
-/// SOLUTION
+// SOLUTION
 const countMeetingRooms = A => {
   // consume input, store in a datastructure ==> O(n^2), can be O(nlogn)
 
@@ -70,21 +70,34 @@ const countMeetingRooms = A => {
 //// TEST CASES ////
 
 // 1
-let meetings = [[1, 2], [3, 4]];
+let meetings = [
+  [1, 2],
+  [3, 4]
+];
 console.log("meetings: ", meetings);
 let output = countMeetingRooms(meetings);
 console.log("output: ", output);
 
 // 2
 console.log("====");
-meetings = [[1, 5], [3, 6], [8, 9]];
+meetings = [
+  [1, 5],
+  [3, 6],
+  [8, 9]
+];
 console.log("meetings: ", meetings);
 output = countMeetingRooms(meetings);
 console.log("output: ", output);
 
 // 3
 console.log("====");
-meetings = [[2, 5], [4, 7], [3, 9], [1, 5], [10, 20]];
+meetings = [
+  [2, 5],
+  [4, 7],
+  [3, 9],
+  [1, 5],
+  [10, 20]
+];
 console.log("meetings: ", meetings);
 output = countMeetingRooms(meetings);
 console.log("output: ", output);
