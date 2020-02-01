@@ -1,3 +1,7 @@
+# LEETCODE 70: Climbing Stairs
+#
+# https://leetcode.com/problems/climbing-stairs/
+#
 # You are climbing a stair case. It takes n steps to reach to the top.
 #
 # Each time you can either climb 1 or 2 steps.
@@ -19,8 +23,7 @@
 # 1. 1 step + 1 step + 1 step
 # 2. 1 step + 2 steps
 # 3. 2 steps + 1 step
-#
-# 70: https://leetcode.com/problems/climbing-stairs/
+
 def climb_stairs(n):
     # sanity check
     if n <= 0:
