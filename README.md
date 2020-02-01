@@ -28,7 +28,7 @@ Coding exercises
 
     <https://medium.com/better-programming/the-ultimate-strategy-to-preparing-for-the-coding-interview-ee9f7eb439f3>
 
-11. Sliding window Dynamic Programming questions can be solved using __Fast & Slow__ pointer approach:
+11. __Sliding window Dynamic Programming__ questions can be solved using __Fast & Slow__ pointer approach:
     - __Fast / Slow__:
         - Bit Flip
         - Minimum Window Substring
@@ -49,3 +49,9 @@ Coding exercises
 - Solution patterns: <https://medium.com/better-programming/the-ultimate-strategy-to-preparing-for-the-coding-interview-ee9f7eb439f3>
 
 - Algorithm solving techniques: <https://medium.com/@shinjukudev/algorithm-solve-techniques-7e4fd008306f>
+
+- Study Guide for Interviews _(open in Incognito)_: <https://medium.com/better-programming/the-software-engineering-study-guide-for-interviews-53b42d82deb0>
+
+- How to solve the Knapsack Problem _(open in Incognito)_: <https://medium.com/@fabianterh/how-to-solve-the-knapsack-problem-with-dynamic-programming-eb88c706d3cf>
+
+- Top 100 LeetCode questions asked (from a Facebook engineer): <https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-100-LeetCode-Questions-to-Save-Your-Time-OaM1orEU>
