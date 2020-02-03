@@ -40,7 +40,7 @@ def max_profit(prices):
 
     # consume differences list
     is_buy = True
-    for i,v in enumerate(diff):
+    for i,_ in enumerate(diff):
         if is_buy:
             if (i == 0 and diff[1] > 0) or (
                     i > 0 and 
