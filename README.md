@@ -50,8 +50,12 @@ Coding exercises
 
 - Algorithm solving techniques: <https://medium.com/@shinjukudev/algorithm-solve-techniques-7e4fd008306f>
 
+- Counting sort _(open in Incognito)_: <https://medium.com/free-code-camp/my-favorite-linear-time-sorting-algorithm-f82f88b5daa1>
+
 - Study Guide for Interviews _(open in Incognito)_: <https://medium.com/better-programming/the-software-engineering-study-guide-for-interviews-53b42d82deb0>
 
 - How to solve the Knapsack Problem _(open in Incognito)_: <https://medium.com/@fabianterh/how-to-solve-the-knapsack-problem-with-dynamic-programming-eb88c706d3cf>
+
+## Questions
 
 - Top 100 LeetCode questions asked (from a Facebook engineer): <https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-100-LeetCode-Questions-to-Save-Your-Time-OaM1orEU>
