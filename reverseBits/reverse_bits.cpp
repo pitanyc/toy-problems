@@ -15,26 +15,49 @@
  */
 
 #include <iostream>
+#include <bitset>
 
-// SOLUTION
+// SOLUTION: O(logn) using block swapping
 uint32_t reverseBits(uint32_t n)
+{
+    // locals
+    unsigned int size = 8 * sizeof(n);  // sizeof() gives you size in bytes
+    uint32_t mask = ~0;                 // all 1-s
+    std::cout << "mask: " << std::bitset<32>(mask) << std::endl;
+
+    // consume input
+    while ((size >>= 1) > 0)
+    {
+        mask ^= (mask << size);
+        std::cout << "size: " << size << ", mask: " << std::bitset<32>(mask) << std::endl;
+        n = ((n >> size) & mask) | ((n << size) & ~mask);
+    }    
+    // finally return
+    return n;
+}
+
+// SOLUTION: O(n) using masks
+uint32_t reverseBits2(uint32_t n)
 {
     // what we return
     uint32_t returnValue = 0;
 
-    // create mask
+    // locals
+    unsigned int size = 8 * sizeof(n);  // sizeof() gives you size in bytes
+
+    // create masks
     uint32_t mask = 1;
-    uint32_t reverseMask = 1 << 31;
+    uint32_t reverseMask = 1 << (size - 1);
 
     // consume input, build output
-    for ( unsigned int i = 0; i < 32; i++)
+    for ( unsigned int i = 0; i < size; i++)
     {
         if ( n & mask )
         {
-            returnValue = returnValue | reverseMask; 
+            returnValue |= reverseMask; 
         }
-        mask = mask << 1;
-        reverseMask = reverseMask >> 1;
+        mask <<= 1;
+        reverseMask >>= 1;
     }
 
     // finally return
