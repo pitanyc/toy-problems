@@ -56,6 +56,10 @@ Coding exercises
 
 - Reversing bits (an n-bit number) in O(log n): <https://medium.com/hackernoon/reversing-an-n-bit-number-in-o-log-n-time-9bf69363d452>
 
+- Range Sum with BIT and Segment Trees: <https://medium.com/@harekrishnamahto18/range-sum-and-update-in-arrays-competitive-programming-82ae5039a16f>
+
+  <https://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/>
+
 ## Study guides
 
 - Solution patterns: <https://medium.com/better-programming/the-ultimate-strategy-to-preparing-for-the-coding-interview-ee9f7eb439f3>
