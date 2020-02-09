@@ -46,7 +46,15 @@ Coding exercises
 
 ## Questions
 
-- Top 100 LeetCode questions asked (from a Facebook engineer): <https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-100-LeetCode-Questions-to-Save-Your-Time-OaM1orEU>
+- Top 100 LeetCode questions asked _(from a Facebook engineer)_: <https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-100-LeetCode-Questions-to-Save-Your-Time-OaM1orEU>
+
+- Top EASY interview questions _(focus on string & arrays)_: <https://leetcode.com/explore/interview/card/top-interview-questions-easy/>
+
+- Top MEDIUM interview questions: <https://leetcode.com/explore/interview/card/top-interview-questions-easy/>
+
+- Top HARD interview questions: <https://leetcode.com/explore/interview/card/top-interview-questions-hard/>
+
+- Curated list of BFS/DFS questions: <https://leetcode.com/list/x5lle9o1/>
 
 ## Solutions
 
