@@ -1,30 +1,30 @@
 /**
- * LEETCODE 198. House Robber
+ * LEETCODE 213. House Robber II
  *
- * https://leetcode.com/problems/house-robber/
+ * https://leetcode.com/problems/house-robber-ii/
  *
  * You are a professional robber planning to rob houses along a street.
- * Each house has a certain amount of money stashed, the only constraint
- * stopping you from robbing each of them is that adjacent houses have
- * security system connected and it will automatically contact the
- * police if two adjacent houses were broken into on the same night.
+ * Each house has a certain amount of money stashed. All houses at this
+ * place are arranged in a circle. That means the first house is the
+ * neighbor of the last one. Meanwhile, adjacent houses have security
+ * system connected and it will automatically contact the police if two
+ * adjacent houses were broken into on the same night.
  *
  * Given a list of non-negative integers representing the amount of
  * money of each house, determine the maximum amount of money you can
  * rob tonight without alerting the police.
  *
  * Example 1:
- *
+ * Input: [2,3,2]
+ * Output: 3
+ * Explanation: You cannot rob house 1 (money = 2) and then rob house 3 
+ *              (money = 2), because they are adjacent houses.
+ * 
+ * Example 2:
  * Input: [1,2,3,1]
  * Output: 4
  * Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3).
  *              Total amount you can rob = 1 + 3 = 4.
- * 
- * Example 2:
- * Input: [2,7,9,3,1]
- * Output: 12
- * Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and 
- *              rob house 5 (money = 1). Total amount you can rob = 2 + 9 + 1 = 12.
  */
 
 #include <iostream>
@@ -56,16 +56,16 @@ int rob(vector<int>& nums)
     {
         return 0;
     }
-    else if ( count == 1 )
+    else if ( count < 3 )
     {
         return nums.at(0);
     }
     
-    // at this point, we have at least 2 points in the input vector
+    // at this point, we have at least 3 points in the input vector
 
     // dynamic programming, bottom up
     vector<int> dp = {nums.at(0), max(nums.at(0), nums.at(1))};
-    for ( unsigned int i = 2; i < count; i++ )
+    for ( unsigned int i = 2; i < count - 1; i++ )
     {
         dp.push_back(max(nums.at(i) + dp.at(i - 2), dp.at(i - 1)));
     }
@@ -78,14 +78,14 @@ int rob(vector<int>& nums)
 int main(int argc, char const *argv[])
 {
     // test case 1
-    std::vector<int> input = {1, 2, 3, 1};
+    std::vector<int> input = {2, 3, 2};
     std::cout << "input = " << input << std::endl;
     int output = rob(input);
     std::cout << "output: " << output << std::endl;
     
     // test case 2
     std::cout << "\n====\n" << std::endl;
-    input = {2, 7, 9, 3, 1};
+    input = {1, 2, 3, 1};
     std::cout << "input: " << input << std::endl;
     output = rob(input);
     std::cout << "output: " << output << std::endl;
