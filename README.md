@@ -48,6 +48,8 @@ Coding exercises
 
 - Top 100 LeetCode questions asked (from a Facebook engineer): <https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-100-LeetCode-Questions-to-Save-Your-Time-OaM1orEU>
 
+- Arden Dertat 28 questions (from a Microsoft engineer): <http://www.ardendertat.com/2012/01/09/programming-interview-questions/>
+
 ## Solutions
 
 - Counting sort _(open in Incognito)_: <https://medium.com/free-code-camp/my-favorite-linear-time-sorting-algorithm-f82f88b5daa1>
