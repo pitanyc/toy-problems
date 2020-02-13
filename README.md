@@ -56,6 +56,8 @@ Coding exercises
 
 - Curated list of BFS/DFS questions: <https://leetcode.com/list/x5lle9o1/>
 
+- Arden Dertat 28 questions (from a Microsoft engineer): <http://www.ardendertat.com/2012/01/09/programming-interview-questions/>
+
 ## Solutions
 
 - Counting sort _(open in Incognito)_: <https://medium.com/free-code-camp/my-favorite-linear-time-sorting-algorithm-f82f88b5daa1>
