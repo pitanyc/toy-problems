@@ -53,7 +53,6 @@ std::ostream& operator<<(std::ostream& os, const std::vector<std::vector<int>>& 
 // O(n) solution in 2 runs using map
 vector<int> twoSum(vector<int> &nums, int target)
 {
-
     // what we return
     vector<int> returnValue;
 
@@ -85,7 +84,8 @@ vector<int> twoSum(vector<int> &nums, int target)
 }
 
 // SOLUTION: Double hash-map, reuse twoSum() solution.
-// Time: O(n^2), space: O(N).
+// Time: O(n^2)
+// Space: O(n)
 vector<vector<int>> threeSum(vector<int>& nums)
 {
     // what we return
@@ -96,7 +96,7 @@ vector<vector<int>> threeSum(vector<int>& nums)
 
     // consume input, create map
     std::map<int, int> target;  // value --> index
-    for ( unsigned int i =0; i < count; i++)
+    for ( unsigned int i = 0; i < count; i++ )
     {
         int num = nums.at(i);
         target[-num] = i;
@@ -130,7 +130,7 @@ vector<vector<int>> threeSum(vector<int>& nums)
     return vector<vector<int>>(returnValue.begin(), returnValue.end());
 }
 
-// SOLUTION
+// MAIN
 int main(int argc, char const *argv[])
 {
     // test case 1
