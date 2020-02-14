@@ -56,7 +56,7 @@ Coding exercises
 
 - Curated list of BFS/DFS questions: <https://leetcode.com/list/x5lle9o1/>
 
-- Arden Dertat 28 questions (from a Microsoft engineer): <http://www.ardendertat.com/2012/01/09/programming-interview-questions/>
+- Arden Dertat 28 questions _(from a Microsoft engineer)_: <http://www.ardendertat.com/2012/01/09/programming-interview-questions/>
 
 ## Solutions
 
