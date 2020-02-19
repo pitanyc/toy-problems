@@ -80,7 +80,7 @@ void wordBreakBacktrack(
     // check for next word
     if ( words.count(word) > 0 )
     {
-        cout << "111 start: " << start << ", word: " << word << endl;
+        // cout << "111 start: " << start << ", word: " << word << endl;
         start += word.length();
         end = start + 1;
         word.clear();
@@ -157,6 +157,14 @@ int main(int argc, char const *argv[])
     std::cout << "\n====\n" << std::endl;
     input = "catsandog";
     wordDict = {"cats", "dog", "sand", "and", "cat"};
+    std::cout << "input: \"" << input << "\", wordDict: " << wordDict << std::endl;
+    output = wordBreak(input, wordDict);
+    std::cout << "output: " << (output ? "true" : "false") << std::endl;
+
+    // test case 4
+    std::cout << "\n====\n" << std::endl;
+    input = "bloombergisfun";
+    wordDict = {"bloom","bloomberg","is","fun"};
     std::cout << "input: \"" << input << "\", wordDict: " << wordDict << std::endl;
     output = wordBreak(input, wordDict);
     std::cout << "output: " << (output ? "true" : "false") << std::endl;
