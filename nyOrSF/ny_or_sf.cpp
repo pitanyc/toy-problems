@@ -91,8 +91,8 @@ std::ostream& operator<<(std::ostream& os, const vector<Participant>& arr)
 //           Keep doing this until either one of the offices has reached max
 //           capacity, or we reached the end of our input participants vector.
 //
-// Time:
-// Space:
+// Time:    O(n)
+// Space:   O(n)
 int getMinCost(const vector<Participant>& p)
 {
     // sanity checks
