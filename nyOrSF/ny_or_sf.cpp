@@ -93,7 +93,7 @@ std::ostream& operator<<(std::ostream& os, const vector<Participant>& arr)
 //
 // Time:    O(n)
 // Space:   O(n)
-int getMinCost(const vector<Participant>& p)
+int nyOrSF(const vector<Participant>& p)
 {
     // sanity checks
     unsigned int count = p.size();
@@ -195,7 +195,7 @@ int main(int argc, char const* argv[])
     p.push_back(Participant(600, 400));
     p.push_back(Participant(200, 900));
     std::cout << "participants = " << p << std::endl;
-    int minCost = getMinCost(p);
+    int minCost = nyOrSF(p);
     std::cout << "minCost: " << minCost << std::endl;
 
     // test case 2
@@ -206,7 +206,7 @@ int main(int argc, char const* argv[])
     p.push_back(Participant(3,   300));
     p.push_back(Participant(4,   400));
     std::cout << "participants = " << p << std::endl;
-    minCost = getMinCost(p);
+    minCost = nyOrSF(p);
     std::cout << "minCost: " << minCost << std::endl;
 
     return 0;
