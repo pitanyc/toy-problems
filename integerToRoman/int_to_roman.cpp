@@ -49,7 +49,19 @@ using namespace std;
 // Space: 
 string intToRoman(int num)
 {
-    return std::string();
+    // sanity checks
+    if (num < 1 || num > 3999)
+    {
+        // shouldn't happen
+        throw runtime_error("Input number out of range");
+    }
+
+    // at this point, num = [1..3999]
+
+    // what we return
+    string returnValue;
+
+    return returnValue;
 }
 
 // MAIN
