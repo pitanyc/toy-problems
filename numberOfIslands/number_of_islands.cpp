@@ -82,10 +82,23 @@ void fillGrid(vector<vector<char>> &grid, int x, int y, int nofRows, int nofCols
     // std::cout << "grid: " << grid << std::endl;
 }
 
-// SOLUTION:
+// SOLUTION: Iterate thru the every point in the grid.
 //
-// Time:
-// Space:
+//           If we find an island, mark it with a different character
+//           (for example: mark it with '2').  Bucket fill all of its neighbors
+//           where the value is '1' with the character '2'.
+// 
+//           Essentially ==> we are changing all '1'-s to all '2'-s.
+//  
+//           Repeat the exercise until every remaining '1' has been found
+//           and painted '2' on the grid.
+//
+// NOTE:     This algorigthm modifies (updates) the passed grid.
+//           If this is not allowed, we can make a copy, or use another DS
+//           to keep track of points already visited.
+//
+// Time:     O(M*N)
+// Space:    O(1)
 int numberOfIslands(vector<vector<char>> &grid)
 {
     // sanity checks
