@@ -57,17 +57,13 @@ std::ostream& operator<<(std::ostream &os, const map<int, string>& m)
     return os;
 }
 
-// Comparator for map.
-bool operator<(const pair<int, string>& a,
-               const pair<int, string>& b)
-{
-    return a.first > b.first;
-}
-
-// SOLUTION: 
+// SOLUTION: Create a static map with all the corner cases:
+//           int --> roman numeral.
 //
-// Time:  
-// Space: 
+//           Then, consume down the input until it's 0.
+//
+// Time:     O(logn)
+// Space:    O(1)
 string integerToRoman(int num)
 {
     // sanity checks
@@ -100,7 +96,7 @@ string integerToRoman(int num)
     };
 
     // debug
-    // cout << "m: " << m << endl;
+    cout << "m: " << m << endl;
 
     // consume input
     for ( map<int, string>::const_reverse_iterator it = m.rbegin(); 
