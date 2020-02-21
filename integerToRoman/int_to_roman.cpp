@@ -38,16 +38,37 @@
  */
 
 #include <iostream>
+#include <map>
 #include <string>
 #include <vector>
 
 using namespace std;
 
+// STREAM OPERATOR ==> map of <int, string>
+std::ostream& operator<<(std::ostream &os, const map<int, string>& m)
+{
+    os << endl;
+    for ( map<int, string>::const_iterator it = m.begin();
+          it != m.end();
+          it++ )
+    {
+        os << "<" << it->first << ", \"" << it->second << "\">" << endl;
+    }
+    return os;
+}
+
+// Comparator for map.
+bool operator<(const pair<int, string>& a,
+               const pair<int, string>& b)
+{
+    return a.first > b.first;
+}
+
 // SOLUTION: 
 //
 // Time:  
 // Space: 
-string intToRoman(int num)
+string integerToRoman(int num)
 {
     // sanity checks
     if (num < 1 || num > 3999)
@@ -61,6 +82,43 @@ string intToRoman(int num)
     // what we return
     string returnValue;
 
+    // locals
+    static const map<int, string> m = {
+        {1000, "M"},
+        {900,  "CM"},
+        {500,  "D"},
+        {400,  "CD"},
+        {100,  "C"},
+        {90,   "XC"},
+        {50,   "L"},
+        {40,   "XL"},
+        {10,   "X"},
+        {9,    "IX"},
+        {5,    "V"},
+        {4,    "IV"},
+        {1,    "I"}
+    };
+
+    // debug
+    // cout << "m: " << m << endl;
+
+    // consume input
+    for ( map<int, string>::const_reverse_iterator it = m.rbegin(); 
+          it != m.rend();
+          /* nothing */ )
+    {
+        // cout << "num: " << num << ", it->first: " << it->first << endl;
+        if ( num - it->first >= 0 )
+        {
+            returnValue += it->second;
+            num -= it->first;
+        }
+        else
+        {
+            it++;
+        }
+    }
+
     // finally return
     return returnValue;
 }
@@ -71,16 +129,22 @@ int main(int argc, char* argv[])
     // test case 1
     int input = 3;
     std::cout << "input = " << input << std::endl;
-    string output = intToRoman(input);
+    string output = integerToRoman(input);
     std::cout << "output = \"" << output << "\"" << std::endl;
 
     // test case 2
-    // std::cout << "\n====\n" << std::endl;
-    // x = 3;
-    // n = 2;
-    // std::cout << "x = " << x << ", n: " << n << std::endl;
-    // result = myPow(x, n);
-    // std::cout << "result = " << result << std::endl;
+    std::cout << "\n====\n" << std::endl;
+    input = 49;
+    std::cout << "input = " << input << std::endl;
+    output = integerToRoman(input);
+    std::cout << "output = \"" << output << "\"" << std::endl;
+
+    // test case 3
+    std::cout << "\n====\n" << std::endl;
+    input = 61;
+    std::cout << "input = " << input << std::endl;
+    output = integerToRoman(input);
+    std::cout << "output = \"" << output << "\"" << std::endl;
 
     return 0;
 }
