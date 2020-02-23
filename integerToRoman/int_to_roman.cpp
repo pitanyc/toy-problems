@@ -57,6 +57,19 @@ std::ostream& operator<<(std::ostream &os, const map<int, string>& m)
     return os;
 }
 
+// STREAM OPERATOR ==> map of <int, string, std::greater<int>>
+std::ostream& operator<<(std::ostream &os, const map<int, string, std::greater<int>>& m)
+{
+    os << endl;
+    for ( map<int, string>::const_iterator it = m.begin();
+          it != m.end();
+          it++ )
+    {
+        os << "<" << it->first << ", \"" << it->second << "\">" << endl;
+    }
+    return os;
+}
+
 // SOLUTION: Create a static map with all the corner cases:
 //           int --> roman numeral.
 //
@@ -78,8 +91,9 @@ string integerToRoman(int num)
     // what we return
     string returnValue;
 
-    // locals
-    static const map<int, string> m = {
+    // for immediate reverse (descending) sort by keys:
+    // NOTE: make sure to update the operator<<() with the std::greater<int> as well!
+    static const map<int, string, std::greater<int>> m = {
         {1000, "M"},
         {900,  "CM"},
         {500,  "D"},
@@ -95,12 +109,29 @@ string integerToRoman(int num)
         {1,    "I"}
     };
 
+    // use this for reverse iterator:
+    // static const map<int, string> m = {
+    //     {1000, "M"},
+    //     {900,  "CM"},
+    //     {500,  "D"},
+    //     {400,  "CD"},
+    //     {100,  "C"},
+    //     {90,   "XC"},
+    //     {50,   "L"},
+    //     {40,   "XL"},
+    //     {10,   "X"},
+    //     {9,    "IX"},
+    //     {5,    "V"},
+    //     {4,    "IV"},
+    //     {1,    "I"}
+    // };
+
     // debug
     cout << "m: " << m << endl;
 
     // consume input
-    for ( map<int, string>::const_reverse_iterator it = m.rbegin(); 
-          it != m.rend();
+    for ( map<int, string>::const_iterator it = m.begin(); 
+          it != m.end();
           /* nothing */ )
     {
         // cout << "num: " << num << ", it->first: " << it->first << endl;
