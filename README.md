@@ -70,6 +70,8 @@ Coding exercises
 
   <https://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/>
 
+- Use struct as key in unordered_map in C++ : <https://www.techiedelight.com/use-struct-key-std-unordered_map-cpp/>
+
 ## Study guides
 
 - Solution patterns _(open in Incognito)_: <https://medium.com/better-programming/the-ultimate-strategy-to-preparing-for-the-coding-interview-ee9f7eb439f3>
