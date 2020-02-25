@@ -69,12 +69,14 @@ std::ostream& operator<<(std::ostream &os, TreeNode* root)
     return os;
 }
 
-// SOLUTION: A tree is a BST if and only if all the nodes satisfy the
-//           BST condition.  Thus, we need to iterate thru all of the nodes
-//           using BFS or DFS and check the condition.
+// SOLUTION: Check the root value.
+//           If it's greater than BOTH p & q, then go left (root = root->left).
+//           If it's less than BOTH p & q, then go right (root = root->right).
+//           If it's in between, or the root is one of the node values
+//           (ie: root == p or root == q), then return.
 // 
-// Time: O(n)
-// Space: O(n)
+// Time: O(logn)
+// Space: O(1)
 TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q)
 {
     // sanity checks
