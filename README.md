@@ -44,6 +44,27 @@ Coding exercises
 
     <https://medium.com/outco/how-to-solve-sliding-window-problems-28d67601a66>
 
+
+## Data Structures
+
+|   #| Name                            | Methods                                            |
+| --:|---------------------------------|----------------------------------------------------|
+|   1| vector                          | back(), front(), pop_back(), push_back(), resize() |
+|   2| map _(unordered_map, multimap)_ | count(), empty(), erase() find(), operator[]       |
+|   3| set _(unordered_set, multiset)_ | count(), find(), lower_bound(), upper_bound()      |
+|   4| stack                           | empty(), pop(), push(), size(), top()              |
+|   5| queue                           | back(), empty(), front(), pop(), push(), size()    |
+|   6| priority_queue _(make_heap())_  | empty(), pop(), push(), size(), top()              |
+|   7| dequeue                         | back(), clear(), empty(), erase(), front(), pop_back(), pop_front(), push_back(), push_front(), size()   |
+|   8| list                            | back(), clear(), empty(), erase(), front(), pop_back(), pop_front(), push_back(), push_front(), remove(), remove_if(), reverse(), size(), sort(), splice(), unique()  |
+|   9| forward_list                    | empty(), erase_after(), front(), pop_front(), push_front(), remove(), remove_if(), reverse(), sort(), splice_after(), unique()  |
+|  10| int array[100]                  | size_t size = sizeof(arr)/sizeof(arr[0]);                     |
+|  11| bitset                          | Emulates an array of _bool_: all(), any(), count(), flip(), none(), operator[], reset(), set(), size(), test(), to_string()    |
+|  12| Trie                            | __Doesn't exist in STL!__ Implement using _map_ & _set_.                 |
+|  13| Binary tree                     |                  |
+
+---
+
 ## Questions
 
 - Top 100 LeetCode questions asked _(from a Facebook engineer)_: <https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-100-LeetCode-Questions-to-Save-Your-Time-OaM1orEU>
@@ -72,10 +93,10 @@ Coding exercises
 
 - Use struct as key in unordered_map in C++ : <https://www.techiedelight.com/use-struct-key-std-unordered_map-cpp/>
 
+- How to check if a number is prime using regular expression: <https://itnext.io/a-wild-way-to-check-if-a-number-is-prime-using-a-regular-expression-4edfb725f895>
+
 ## Study guides
 
 - Solution patterns _(open in Incognito)_: <https://medium.com/better-programming/the-ultimate-strategy-to-preparing-for-the-coding-interview-ee9f7eb439f3>
 
 - Algorithm solving techniques: <https://medium.com/@shinjukudev/algorithm-solve-techniques-7e4fd008306f>
-
-- Study Guide for Interviews _(open in Incognito)_: <https://medium.com/better-programming/the-software-engineering-study-guide-for-interviews-53b42d82deb0>
