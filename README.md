@@ -11,6 +11,20 @@ Coding exercises
         cout << "\n====\n" << endl;
     }
 
+    ostream& operator<<(ostream &os, const vector<int>& arr)
+    {
+        os << "[";
+        for ( vector<int>::const_iterator it = arr.begin();
+              it != arr.end();
+              it++ )
+        {
+            os << *it;
+            if (it + 1 != arr.end()) os << ", ";
+        }
+        os << "]";
+        return os;
+    }
+
 ## Patterns
 
 1. If the given input is __unsorted _(array, string)_ &rarr;__  check if sorting it helps.
