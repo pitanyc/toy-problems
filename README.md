@@ -10,7 +10,7 @@ Coding exercises
 
 3. If we need to find a __continuous/contiguous subarray &rarr;__ __Sliding Window__: add elements on the right, and remove them from the left.
 
-4. If we need _top/maximum/minimum/closest k elements_ among N elements, then use a __Heap__.
+4. If we need __top/maximum/minimum/closest k elements among N elements &rarr;__ use a __Heap__.
 
 5. If we need to try all combinations (or permutations) of the input, then use recursive __Backtracking__.
 
@@ -28,7 +28,7 @@ Coding exercises
 
 11. If we need to search among a bunch of strings, then use a __Trie__.
 
-12. If the problem is a __Linked List & we cannot use extra space&rarr;__ use __Fast & Slow__ pointers.
+12. If the problem is a __Linked List & we cannot use extra space &rarr;__ use __Fast & Slow__ pointers.
 
     <https://medium.com/better-programming/the-ultimate-strategy-to-preparing-for-the-coding-interview-ee9f7eb439f3>
 
