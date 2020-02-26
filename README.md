@@ -4,15 +4,15 @@ Coding exercises
 
 ## Patterns
 
-1. If the given input is unsorted _(array, string)_, then check if sorting it helps.
+1. If the given input is __unsorted _(array, string)_ &rarr;__  check if sorting it helps.
 
-2. If the given input is sorted _(array, string, list, or matrix)_, then use __Binary Search__ or __Two Pointers__ strategy.
+2. If the given input is __sorted _(array, string, list, or matrix)_ &rarr;__ use __Binary Search__ or __Two Pointers__ strategy.
 
-3. If we need to find a continuous/contiguous subarray, then think __Sliding Window__: add elements on the right, and remove them from the left.
+3. If we need to find a __continuous/contiguous subarray &rarr;__ __Sliding Window__: add elements on the right, and remove them from the left.
 
 4. If we need _top/maximum/minimum/closest k elements_ among N elements, then use a __Heap__.
 
-5. If we need to try all combinations (or permutations) of the input, then use recursive __Backtracking__ or iterative __Breadth-First Search__.
+5. If we need to try all combinations (or permutations) of the input, then use recursive __Backtracking__.
 
 6. Questions on Trees & Graphs can be solved through __BFS__ or __DFS__.
 
@@ -28,7 +28,7 @@ Coding exercises
 
 11. If we need to search among a bunch of strings, then use a __Trie__.
 
-12. If the problem is a Linked List, and we cannot use extra space, then use __Fast & Slow__ pointer approach.
+12. If the problem is a __Linked List & we cannot use extra space&rarr;__ use __Fast & Slow__ pointers.
 
     <https://medium.com/better-programming/the-ultimate-strategy-to-preparing-for-the-coding-interview-ee9f7eb439f3>
 
@@ -50,21 +50,22 @@ Coding exercises
 
 ## Data Structures
 
-|   #| Name                            | Methods                                            |
-| --:|---------------------------------|----------------------------------------------------|
-|   1| vector                          | back(), front(), pop_back(), push_back(), resize() |
-|   2| map _(unordered_map, multimap)_ | count(), empty(), erase() find(), operator[]       |
-|   3| set _(unordered_set, multiset)_ | count(), find(), lower_bound(), upper_bound()      |
-|   4| stack                           | empty(), pop(), push(), size(), top()              |
-|   5| queue                           | back(), empty(), front(), pop(), push(), size()    |
-|   6| priority_queue _(make_heap())_  | empty(), pop(), push(), size(), top()              |
-|   7| dequeue                         | back(), clear(), empty(), erase(), front(), pop_back(), pop_front(), push_back(), push_front(), size()   |
-|   8| list                            | back(), clear(), empty(), erase(), front(), pop_back(), pop_front(), push_back(), push_front(), remove(), remove_if(), reverse(), size(), sort(), splice(), unique()  |
-|   9| forward_list                    | empty(), erase_after(), front(), pop_front(), push_front(), remove(), remove_if(), reverse(), sort(), splice_after(), unique()  |
-|  10| int array[100]                  | size_t size = sizeof(arr)/sizeof(arr[0]);                     |
-|  11| bitset                          | Emulates an array of _bool_: all(), any(), count(), flip(), none(), operator[], reset(), set(), size(), test(), to_string()    |
-|  12| Trie                            | __Doesn't exist in STL!__ Implement using _map_ & _set_.                 |
-|  13| Binary tree                     |                  |
+|   #| Name                                | Methods                                              |
+| --:|-------------------------------------|------------------------------------------------------|
+|   1| vector                              | _back(), front(), pop_back(), push_back(), resize()_ |
+|   2| map<br/>unordered_map<br/>multimap  | _count(), empty(), erase() find(), operator[]_       |
+|   3| set<br/>unordered_set<br/>multiset) | _count(), find(), lower_bound(), upper_bound()_      |
+|   4| stack                               | _empty(), pop(), push(), size(), top()_              |
+|   5| queue                               | _back(), empty(), front(), pop(), push(), size()_    |
+|   6| priority_queue                      | _empty(), pop(), push(), size(), top()_              |
+|   7| dequeue                             | _back(), clear(), empty(), erase(), front(), pop_back(), pop_front(), push_back(), push_front(), size()_ |
+|   8| list                                | _back(), clear(), empty(), erase(), front(), pop_back(), pop_front(), push_back(), push_front(), remove(), remove_if(), reverse(), size(), sort(), splice(), unique()_ |
+|   9| forward_list                        | _empty(), erase_after(), front(), pop_front(), push_front(), remove(), remove_if(), reverse(), sort(), splice_after(), unique()_ |
+|  10| int array[100]                      | _size_t size = sizeof(arr)/sizeof(arr[0]);                     |
+|  11| bitset                              | Emulates an __array of bool__: _all(), any(), count(), flip(), none(), operator[], reset(), set(), size(), test(), to_string()_ |
+|  12| Trie                                | __Doesn't exist in STL!__ Implement using _map_ & _set_.                 |
+|  13| Binary tree                         |                  |
+|  14| Vector heap methods                 | _make_heap(), push_heap(), pop_heap(), front(), is_heap(), is_heap_until(), sort_heap()_  |
 
 ---
 
