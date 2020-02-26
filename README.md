@@ -2,6 +2,15 @@
 
 Coding exercises
 
+    string input;
+    while (getline(cin, input))
+    {
+        cout << "input: " << input << endl;
+        string output = candyCrush(input);
+        cout << "output: " << output << endl;
+        cout << "\n====\n" << endl;
+    }
+
 ## Patterns
 
 1. If the given input is __unsorted _(array, string)_ &rarr;__  check if sorting it helps.
