@@ -59,11 +59,11 @@ Coding exercises
 |   5| queue                               | _back(), empty(), front(), pop(), push(), size()_    |
 |   6| priority_queue                      | _empty(), pop(), push(), size(), top()_              |
 |   7| dequeue                             | _back(), clear(), empty(), erase(), front(), pop_back(), pop_front(), push_back(), push_front(), size()_ |
-|   8| list                                | _back(), clear(), empty(), erase(), front(), pop_back(), pop_front(), push_back(), push_front(), remove(), remove_if(), reverse(), size(), sort(), splice(), unique()_ |
+|   8| list                                | _back(), clear(), empty(), erase(), front(), pop_back(), pop_front(), push_back(), push_front(), remove(), remove_if(), reverse(), size(), sort(), splice(), unique()_  |
 |   9| forward_list                        | _empty(), erase_after(), front(), pop_front(), push_front(), remove(), remove_if(), reverse(), sort(), splice_after(), unique()_ |
-|  10| int array[100]                      | _size_t size = sizeof(arr)/sizeof(arr[0]);                     |
+|  10| int array[100]                      | size_t size = sizeof(arr)/sizeof(arr[0]);            |
 |  11| bitset                              | Emulates an __array of bool__: _all(), any(), count(), flip(), none(), operator[], reset(), set(), size(), test(), to_string()_ |
-|  12| Trie                                | __Doesn't exist in STL!__ Implement using _map_ & _set_.                 |
+|  12| Trie                                | __Doesn't exist in STL!__ Implement using _map_ & _set_. |
 |  13| Binary tree                         |                  |
 |  14| Vector heap methods                 | _make_heap(), push_heap(), pop_heap(), front(), is_heap(), is_heap_until(), sort_heap()_  |
 
