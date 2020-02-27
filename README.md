@@ -53,8 +53,8 @@ Coding exercises
 |   #| Name                                | Methods                                              |
 | --:|-------------------------------------|------------------------------------------------------|
 |   1| vector                              | _back(), front(), pop_back(), push_back(), resize()_ |
-|   2| map<br/>unordered_map<br/>multimap  | _count(), empty(), erase() find(), operator[]_       |
-|   3| set<br/>unordered_set<br/>multiset) | _count(), find(), lower_bound(), upper_bound()_      |
+|   2| map<br/>unordered_map<br/>multimap  | _clear(), count(), empty(), erase(), find(), operator[]_       |
+|   3| set<br/>unordered_set<br/>multiset) | _clear(), count(), empty(), erase(), insert(), find(), lower_bound(), upper_bound()_ |
 |   4| stack                               | _empty(), pop(), push(), size(), top()_              |
 |   5| queue                               | _back(), empty(), front(), pop(), push(), size()_    |
 |   6| priority_queue                      | _empty(), pop(), push(), size(), top()_              |
