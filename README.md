@@ -106,6 +106,8 @@ Coding exercises
 
 - Arden Dertat 28 questions _(from a Microsoft engineer)_: <http://www.ardendertat.com/2012/01/09/programming-interview-questions/>
 
+- System design interview questions with solutions: <https://github.com/donnemartin/system-design-primer#system-design-interview-questions-with-solutions>
+
 ## Solutions
 
 - Counting sort _(open in Incognito)_: <https://medium.com/free-code-camp/my-favorite-linear-time-sorting-algorithm-f82f88b5daa1>
