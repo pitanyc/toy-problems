@@ -42,10 +42,18 @@
 
 using namespace std;
 
-// SOLUTION: 
+// SOLUTION: Build the output bottom up, starting with the base case.
+//           At each iteration, we go thru the previous result (previous string)
+//           and simply count how many of the same numbers (characters) are 
+//           there one after another.
 //
-// Time: O(n)
-// Space: O(n)
+//           This solution uses 3 loops:
+//              => to go from 1..n
+//              => to go thru the previous result string
+//              => to find the same repeating chars in the previous result string
+//
+// Time: O(n) - need to build stuff bottom up
+// Space: O(n) - two strings, their lengths depends on the input n
 string countAndSay(int n)
 {
     // sanity checks
