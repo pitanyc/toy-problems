@@ -106,7 +106,11 @@ Coding exercises
 
 - Arden Dertat 28 questions _(from a Microsoft engineer)_: <http://www.ardendertat.com/2012/01/09/programming-interview-questions/>
 
+## System Design Questions
+
 - System design interview questions with solutions: <https://github.com/donnemartin/system-design-primer#system-design-interview-questions-with-solutions>
+
+- How to succeed in a system design interview: <https://blog.pramp.com/how-to-succeed-in-a-system-design-interview-27b35de0df26>
 
 ## Solutions
 
