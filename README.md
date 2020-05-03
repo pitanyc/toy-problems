@@ -96,6 +96,8 @@ Coding exercises
 
 - Top 100 LeetCode questions asked _(from a Facebook engineer)_: <https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-100-LeetCode-Questions-to-Save-Your-Time-OaM1orEU>
 
+- Real questions asked by companies _(open in Incognito)_: <https://medium.com/javascript-in-plain-english/real-technical-interview-questions-a3829febaa95>
+
 - Top EASY interview questions _(focus on string & arrays)_: <https://leetcode.com/explore/interview/card/top-interview-questions-easy/>
 
 - Top MEDIUM interview questions: <https://leetcode.com/explore/interview/card/top-interview-questions-easy/>
@@ -130,6 +132,12 @@ Coding exercises
 
 ## Study guides
 
+- How to get hired at Uber, Google, Amazon, LinkedIn, Microsoft, Facebook _(open in Incognito)_: <https://medium.com/swlh/how-to-get-hired-at-uber-google-amazon-linkedin-microsoft-facebook-etc-4f5a2f159c25>
+
 - Solution patterns _(open in Incognito)_: <https://medium.com/better-programming/the-ultimate-strategy-to-preparing-for-the-coding-interview-ee9f7eb439f3>
 
 - Algorithm solving techniques: <https://medium.com/@shinjukudev/algorithm-solve-techniques-7e4fd008306f>
+
+- Free Programming Books: <https://github.com/EbookFoundation/free-programming-books>
+
+- Coding Interview University: <https://github.com/jwasham/coding-interview-university>
