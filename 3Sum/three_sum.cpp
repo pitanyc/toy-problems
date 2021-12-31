@@ -16,7 +16,7 @@
  * ]
  */
 
-#include <algorithm>    // std::sort
+#include <algorithm> // std::sort
 #include <iostream>
 #include <map>
 #include <set>
@@ -24,10 +24,9 @@
 
 using namespace std;
 
-std::ostream& operator<<(std::ostream &os, const std::vector<int> arr)
+std::ostream& operator<<(std::ostream& os, const std::vector<int>& arr)
 {
-    for (std::vector<int>::const_iterator it = arr.begin();
-         it != arr.end();
+    for (std::vector<int>::const_iterator it = arr.begin(); it != arr.end();
          it++)
     {
         os << *it << " ";
@@ -35,12 +34,13 @@ std::ostream& operator<<(std::ostream &os, const std::vector<int> arr)
     return os;
 }
 
-std::ostream& operator<<(std::ostream& os, const std::vector<std::vector<int>>& arr)
+std::ostream& operator<<(std::ostream& os,
+                         const std::vector<std::vector<int>>& arr)
 {
     os << "[\n";
-    for (std::vector<std::vector<int>>::const_iterator it = arr.begin();
-         it != arr.end();
-         it++)
+    for ( std::vector<std::vector<int>>::const_iterator it = arr.begin();
+          it != arr.end();
+          it++ )
     {
         os << "[";
         os << *it << " ";
@@ -51,7 +51,7 @@ std::ostream& operator<<(std::ostream& os, const std::vector<std::vector<int>>& 
 }
 
 // O(n) solution in 2 runs using map
-vector<int> twoSum(vector<int> &nums, int target)
+vector<int> twoSum(const vector<int> &nums, int target)
 {
     // what we return
     vector<int> returnValue;
@@ -61,7 +61,7 @@ vector<int> twoSum(vector<int> &nums, int target)
 
     // create helper map of (target - num) -> index
     map<int, int> m;
-    for (unsigned int i = 0; i < count; i++)
+    for ( unsigned int i = 0; i < count; i++ )
     {
         m[target - nums.at(i)] = i;
     }
@@ -86,7 +86,7 @@ vector<int> twoSum(vector<int> &nums, int target)
 // SOLUTION: Double hash-map, reuse twoSum() solution.
 // Time: O(n^2)
 // Space: O(n)
-vector<vector<int>> threeSum(vector<int>& nums)
+vector<vector<int>> threeSum(const vector<int>& nums)
 {
     // what we return
     set<vector<int>> returnValue;
@@ -131,14 +131,14 @@ vector<vector<int>> threeSum(vector<int>& nums)
 }
 
 // MAIN
-int main(int argc, char const *argv[])
+int main(int argc, char const* argv[])
 {
     // test case 1
     std::vector<int> input = {-1, 0, 1, 2, -1, -4};
     std::cout << "input: " << input << std::endl;
     vector<vector<int>> output = threeSum(input);
     std::cout << "output: " << output << std::endl;
-    
+
     // test case 2
     std::cout << "====\n" << std::endl;
     input = {-3, 0, 1, 2, -4, 2, -1};
