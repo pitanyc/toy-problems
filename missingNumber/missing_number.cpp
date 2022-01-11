@@ -47,7 +47,7 @@ int missingNumber(const vector<int>& nums)
     // locals
     int count = nums.size();
 
-    // consume input, populate map
+    // consume input, populate set
     set<int> s;
     for ( int i = 0; i < count; i++ )
     {

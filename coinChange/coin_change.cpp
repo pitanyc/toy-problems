@@ -58,7 +58,8 @@ int coinChange(vector<int>& coins, int amount)
     {
         for ( int j = 0; j < count; j++ )
         {
-            int diff = i - coins.at(j);
+            int coin = coins.at(j);
+            int diff = i - coin;
             if ( diff == 0 )
             {
                 dp.at(i) = 1;

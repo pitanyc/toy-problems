@@ -77,11 +77,8 @@ int maxArea(const vector<int>& height)
             int w = j - i;
             int h = std::min(maxLeft.at(i), maxRight.at(j));
             int volume = w * h;
+            returnValue = std::max(returnValue, volume);
             std::cout << "i: " << i << ", j: " << j << " | h = " << h << ", w = " << w << ", volume = " << volume << std::endl;
-            if ( volume > returnValue )
-            {
-                returnValue = volume;
-            }
         }
     }
 

@@ -26,7 +26,7 @@
  * Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and 
  *              rob house 5 (money = 1). Total amount you can rob = 2 + 9 + 1 = 12.
  */
-
+#include <numeric>
 #include <iostream>
 #include <vector>
 
@@ -60,18 +60,33 @@ int rob(vector<int>& nums)
     {
         return nums.at(0);
     }
-    
-    // at this point, we have at least 2 points in the input vector
-
-    // dynamic programming, bottom up
-    vector<int> dp = {nums.at(0), max(nums.at(0), nums.at(1))};
-    for ( unsigned int i = 2; i < count; i++ )
+    else if ( count == 2 )
     {
-        dp.push_back(max(nums.at(i) + dp.at(i - 2), dp.at(i - 1)));
+        return max(nums.at(0), nums.at(1));
     }
 
-    // finally return
-    return dp.back();
+    // at this point, we have at least 3 points in the input vector
+
+    int returnValue = max(nums.at(1), nums.at(0) + nums.at(2));
+
+   // dynamic programming, bottom up
+    vector<int> dp = {nums.at(0), nums.at(1), nums.at(0) + nums.at(2)};
+    for (unsigned int i = 3; i < count; i++)
+    {
+        dp.push_back(nums.at(i) + max(dp.at(i - 2), dp.at(i - 3)));
+        returnValue = max(returnValue, dp.back());
+    }
+ 
+    return returnValue;
+    // dynamic programming, bottom up
+    // vector<int> dp = {nums.at(0), max(nums.at(0), nums.at(1))};
+    // for ( unsigned int i = 2; i < count; i++ )
+    // {
+    //     dp.push_back(max(nums.at(i) + dp.at(i - 2), dp.at(i - 1)));
+    // }
+
+    // // finally return
+    // return dp.back();
 }
 
 // MAIN

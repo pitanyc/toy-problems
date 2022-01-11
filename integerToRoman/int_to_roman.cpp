@@ -168,7 +168,7 @@ int main(int argc, char* argv[])
 
     // test case 3
     std::cout << "\n====\n" << std::endl;
-    input = 61;
+    input = 1994;
     std::cout << "input = " << input << std::endl;
     output = integerToRoman(input);
     std::cout << "output = \"" << output << "\"" << std::endl;

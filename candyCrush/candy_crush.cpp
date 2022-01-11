@@ -1,19 +1,47 @@
 /**
  * LEETCODE 723: Candy Crush
- * 
+ *
  * https://leetcode.com/problems/candy-crush/
- * 
- * Given a string, remove all characters of 3 or more occurrences on it, 
+ *
+ * Given a string, remove all characters of 3 or more occurrences on it,
  * ala candy crush.
- * 
+ *
  * Example:
  * INPUT: "aabbcccbad"
  * OUTPUT: "d"
  */
 
+#include <algorithm>
 #include <iostream>
+#include <stack>
 #include <string>
 #include <vector>
+
+std::ostream& operator<<(std::ostream& os, std::stack<char> stack)
+{
+    std::string string;
+    while ( !stack.empty() )
+    {
+        string += stack.top();
+        stack.pop();
+    }
+    os << string;
+    return os;
+}
+
+// Helper method to crush candies on the stack.
+void crushStack(unsigned int count, std::stack<char>& stack)
+{
+    if ( count > 2 )
+    {
+        // crush here
+        for ( unsigned j = 0; j < count; j++ )
+        {
+            stack.pop();
+        }
+        // std::cout << "stack AFTER CRUSH: " << stack << std::endl;
+    }
+}
 
 // SOLUTION:
 //  1) Use a Stack of characters.
@@ -22,11 +50,11 @@
 //  4) Final answer is whatever remains in the Stack.
 //
 // TIME: O(N), where N = length of input String
-std::string candyCrush(const std::string &input)
+std::string candyCrush(const std::string& input)
 {
     // validate input
     unsigned int len = input.length();
-    if (len < 3)
+    if ( len < 3 )
     {
         // echo back the input
         return input;
@@ -34,88 +62,77 @@ std::string candyCrush(const std::string &input)
 
     // if we are here ==> input has at least 3 characters
 
-    // what we return
-    std::string returnValue;
+    std::stack<char> stack;
 
-    // use a Stack
-    std::vector<char> stack;
-
-    // consume input
     char lastChar = input.at(0);
-    stack.push_back(lastChar);
+    stack.push(lastChar);
     unsigned int count = 1; // counts how many same chars on top of the Stack
-    for (unsigned int i = 1; i < len; i++)
+    for ( unsigned int i = 1; i < len; i++ )
     {
-        // get next char
         char c = input.at(i);
-        if (c == lastChar)
+        if ( lastChar == c )
         {
-            // same as top of the Stack
+            // same as last char
             count++;
+            stack.push(c);
         }
         else
         {
-            // different than top of the Stack
+            // last char different
+            crushStack(count, stack);
+
+            // reset lastChar
             lastChar = c;
+            stack.push(c);
 
-            // crush same characters
-            if (count >= 3)
-            {
-                for (unsigned j = 0; j < count; j++)
-                {
-                    stack.pop_back();
-                }
-            }
-
-            // figure out what count should be
+            // reset count
             count = 1;
-            if (stack.size() > 0)
+            if ( stack.size() > 1 )
             {
-                char top = stack.back();
-                stack.pop_back();
-                if (top == c)
+                // we have at least 2 elements on the stack
+                std::stack<char> tempStack;
+                while ( stack.size() && c == lastChar )
                 {
-                    count++;
-                    if (stack.size() > 0)
-                    {
-                        char next = stack.back();
-                        stack.pop_back();
-                        if (next == c)
-                        {
-                            count++;
-                        }
-                        stack.push_back(next);
-                    }
+                    c = stack.top();
+                    stack.pop();
+                    tempStack.push(c);
                 }
-                stack.push_back(top);
+
+                // count is how many same elements we have in temp stack
+                count = tempStack.size();
+                if ( !stack.empty() )
+                {
+                    // top of temp stack contains different character
+                    count--;
+                }
+
+                // put temp stack back into stack
+                while ( !tempStack.empty() )
+                {
+                    stack.push(tempStack.top());
+                    tempStack.pop();
+                }
             }
         }
-
-        // push to stack
-        stack.push_back(c);
-
-        // debug
+        // std::cout << "stack: " << stack << std::endl;
         // std::cout << "count: " << count << std::endl;
-        // std::cout << "stack: [" << std::string(stack.begin(), stack.end()) << "]" << std::endl;
     }
 
-    // check if we have uncrushed items at the end
-    if (count >= 3)
-    {
-        for (unsigned j = 0; j < count; j++)
-        {
-            stack.pop_back();
-        }
-    }
+    // check if we need to crush at the end
+    crushStack(count, stack);
 
     // assemble output
-    returnValue = std::string(stack.begin(), stack.end());
+    std::string returnValue;
+    while ( !stack.empty() )
+    {
+        returnValue = returnValue + stack.top();
+        stack.pop();
+    }
 
-    // finally return
     return returnValue;
 }
 
-int main(int argc, char const *argv[])
+int main(int argc, char const* argv[])
 {
     // test case 1
     std::string input = "aabbba";

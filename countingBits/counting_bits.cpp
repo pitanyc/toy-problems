@@ -48,6 +48,8 @@ vector<int> countBits(int num)
     // what we return
     vector<int> returnValue(num + 1, 0);
 
+    cout << "2 & 1: " << (2 & 1) << endl;
+
     // iterate till num
     for ( int i = 1; i <= num; i++ )
     {

@@ -12,24 +12,23 @@
  * 2. Children with a higher rating get more candies than their
  *    neighbors. What is the minimum candies you must give?
  */
+#include <numeric>
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-vector<int> candy(const vector<int> &ratings)
+int candy(const vector<int> &ratings)
 {
-    // what we return
-    vector<int> result;
-
     // validate input
     unsigned int len = ratings.size();
     if (len == 0)
     {
-        return result;
+        return 0;
     }
 
-    // init result to all zeros
+    // init results to all 1
+    vector<int> result;
     result.resize(len, 1);
 
     // go from left, starting  at index 1
@@ -77,7 +76,7 @@ vector<int> candy(const vector<int> &ratings)
     }
 
     // finally return
-    return result;
+    return std::accumulate(result.begin(), result.end(), 0);
 }
 
 std::ostream &operator<<(std::ostream &os, const std::vector<int> &input)
@@ -94,14 +93,14 @@ std::ostream &operator<<(std::ostream &os, const std::vector<int> &input)
 int main(int argc, char const *argv[])
 {
     // test case 1: regular input
-    vector<int> ratings = {1, 2, 4, 2, 1, 5};
+    vector<int> ratings = {1, 0, 2};
     cout << "input: " << ratings << endl;
-    vector<int> result = candy(ratings);
+    int result = candy(ratings);
     cout << "output: " << result << endl;
 
     // test case 2: descending start
     cout << "====" << endl;
-    ratings = {5, 4, 3, 2, 2, 6};
+    ratings = {1, 2, 2};
     cout << "input: " << ratings << endl;
     result = candy(ratings);
     cout << "output: " << result << endl;
