@@ -98,12 +98,42 @@ vector<int> moveZeros2(vector<int>& in)
     return in;
 }
 
+// SOLUTION 2: Use 2 pointers, iterate thru input array:
+//               * always swap left and right pointer elements
+//
+// Time:  O(N) - must iterate thru entire input vector
+// Space: O(1) - no additional data structure needed
+vector<int> moveZeros3(vector<int>& in)
+{
+    // locals
+    unsigned int count = in.size();
+    int left = 0;
+
+    // consume input
+    for (size_t i = 0; i < count; i++)
+    {
+        // cout << "i: " << i << ", left: " << left << ", in: " << in << endl;
+        int curr = in.at(i);
+        if ( curr != 0 )
+        {
+            // non-zero ==> swap left and right elements
+            int temp = in.at(left);
+            in.at(left) = curr;
+            in.at(i) = temp;
+            left++;
+        }
+    }
+    
+    // finally return
+    return in;
+}
+
 int main(int argc, char const* argv[])
 {
     // test case 1
     vector<int> input = {0, 1, 0, 3, 12};
     cout << "input = " << input << endl;
-    vector<int> output = moveZeros2(input);
+    vector<int> output = moveZeros3(input);
     cout << "output: " << output << endl;
 
     return 0;

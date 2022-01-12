@@ -103,10 +103,7 @@ void generateMatches(int n)
     for (int i = 1; i <= half; i++)
     {
         group1.push_back(i);
-    }
-    for (int i = half + 1; i <= n; i++)
-    {
-        group2.push_back(i);
+        group2.push_back(half + i);
     }
 
     // debug

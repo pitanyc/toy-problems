@@ -100,7 +100,7 @@ int main(int argc, char const *argv[])
     std::cout << "\n====\n" << std::endl;
     input = {1, 3, 1, 4, 2, 2};
     k = 4;
-    std::cout << "input: " << input << std::endl;
+    std::cout << "input = " << input << ", k = " << k << std::endl;
     output = subarraySum(input, k);
     std::cout << "output: " << output << std::endl;
 
