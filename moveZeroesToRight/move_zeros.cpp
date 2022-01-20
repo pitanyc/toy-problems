@@ -98,7 +98,7 @@ vector<int> moveZeros2(vector<int>& in)
     return in;
 }
 
-// SOLUTION 2: Use 2 pointers, iterate thru input array:
+// SOLUTION 3: Use 2 pointers, iterate thru input array:
 //               * always swap left and right pointer elements
 //
 // Time:  O(N) - must iterate thru entire input vector
