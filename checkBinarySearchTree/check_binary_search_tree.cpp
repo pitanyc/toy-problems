@@ -144,6 +144,36 @@ TreeNode* insertNode(const vector<int>& nums, TreeNode* root, int i)
     return root;
 }
 
+// SOLUTION: Both left and right subtrees need to satisfy the BST condition.
+//
+// Time:  O(n)
+// Space: O(1)
+bool isValidBST(TreeNode* root)
+{
+    // corner cases
+    if (!root)
+    {
+        return true;
+    }
+
+    // at this point root is valid
+    
+    // check left
+    if (root->left && root->left->val >= root->val)
+    {
+        return false;
+    }
+
+    // check right
+    if (root->right && root->right->val < root->val)
+    {
+        return false;
+    }
+
+    // check children
+    return isValidBST(root->left) && isValidBST(root->right);
+}
+
 // MAIN
 int main(int argc, char const *argv[])
 {
@@ -151,7 +181,7 @@ int main(int argc, char const *argv[])
     std::vector<int> input = {2, 1, 3};
     TreeNode* root = insertNode(input, root, 0);
     std::cout << "input = " << root << std::endl;
-    bool output = isBST(root);
+    bool output = isValidBST(root);
     std::cout << "output: " << output << std::endl;
     
     // test case 2
@@ -159,7 +189,7 @@ int main(int argc, char const *argv[])
     input = {5,1,4,0,0,3,6};
     root = insertNode(input, root, 0);
     std::cout << "input = " << root << std::endl;
-    output = isBST(root);
+    output = isValidBST(root);
     std::cout << "output: " << output << std::endl;
 
     return 0;
