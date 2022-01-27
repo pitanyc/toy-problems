@@ -102,7 +102,7 @@ std::ostream& operator<<(std::ostream &os, TreeNode* root)
 TreeNode* insertNode(const vector<int>& nums, TreeNode* root, int i)
 {
     // sanity check
-    if ( i < nums.size() && nums.at(i) > 0 )
+    if ( i < nums.size() && nums.at(i) != 0 )
     {
         root = new TreeNode(nums.at(i));
         root->left = insertNode(nums, root->left, 2 * i + 1);
@@ -112,30 +112,73 @@ TreeNode* insertNode(const vector<int>& nums, TreeNode* root, int i)
     return root;
 }
 
-// SOLUTION 1: 
+// SOLUTION 1: We can only split (go left and right) at one node and one 
+//             node only.  But we don't have to split at any node, it's
+//             also fine to not split at all.
+// 
+//             The maximum value obtained from a left or right subtree is
+//             optional, meaning we don't have to take any left or right subtree
+//             if it's less than 0 (making the total sum smaller).
+//
+//             Here is the algorithm:
+//             1. Have a global max, initialize it to the root's value.
+//             2. Using DFS, calculate the max value of each subtree.  The
+//                leaf value is just the node value on the leaf.
+//             3. At each non-leaf, calculate 2 values:
+//                * value if we split at this node = node val + leftTree + rightTree
+//                * value if we didn't split at this node = node val + max(leftTree, rightTree, 0)
+//             4. Update global max if any of those is bigger than current global max.
+//             5. Return to caller the unsplit value (which means the most)
+//                we can get from this subtree without a split).
 //
 // Time:  O(n)
 // Space: O(1)
+int dfs(TreeNode* root, int& maxSum)
+{
+    // base case
+    if (!root)
+    {
+        return 0;
+    }
+
+    // root isn't null at this point
+
+    // calculate left and right subtree values
+    int leftTree = dfs(root->left, maxSum);
+    int rightTree = dfs(root->right, maxSum);
+
+    // check if we did split at this node
+    int splitValue = root->val + leftTree + rightTree;
+    maxSum = max(maxSum, splitValue);
+
+    int unsplitValue = root->val + max(max(leftTree, rightTree), 0);
+
+    return unsplitValue;
+}
+
 int maxPathSum(TreeNode* root)
 {
-    return 0;
+    int maxSum = INT32_MIN;
+    dfs(root, maxSum);
+    return maxSum;
 }
 
 int main(int argc, const char** argv)
 {
     // test case 1
-    vector<int> input = {3,9,20,0,0,15,7};
+    vector<int> input = {1,2,3};
     TreeNode* root = insertNode(input, root, 0);
     cout << "root: " << root << endl;
     int output = maxPathSum(root);
     cout << "output: " << output << endl;
 
     // test case 2
-    // cout << "====" << endl;
-    // input = {3, 2, 1, 0, 4};
-    // cout << "input: " << input << endl;
-    // output = moveZeros(input);
-    // cout << "output: " << output << endl;
+    cout << "====" << endl;
+    input = {-10,9,20,0,0,15,7};
+    root = insertNode(input, root, 0);
+    cout << "root: " << root << endl;
+    output = maxPathSum(root);
+    cout << "output: " << output << endl;
 
     return 0;
 }
